@@ -90,9 +90,9 @@
     to-fast-properties "^2.0.0"
 
 "@carimus/eslint-config-web@^1.0.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@carimus/eslint-config-web/-/eslint-config-web-1.1.0.tgz#723571ad8b1bbf8e3c4d2c9aa77070fe14a7ab73"
-  integrity sha512-4g9WKC3Lq9ZVX7mlcRFhmamjuibudEAJ7voDWVFs+J0Y/qkJGaa37DvIZCjso+AoYk0DTruucykGJKezK/ue7Q==
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@carimus/eslint-config-web/-/eslint-config-web-1.2.0.tgz#9f729699ce31436224dec79c152d578a6c9a8012"
+  integrity sha512-0wKk8ppxIOoG3CRLND2j9Tc6NRrfVH5BITbsPpnFPn/Vetzb3iRkltVvRkteJy4IQCkBtY4hWcMsByKPZb7fiw==
   dependencies:
     babel-eslint "^10.0.3"
     eslint-config-prettier "^6.4.0"
