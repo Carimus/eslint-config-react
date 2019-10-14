@@ -1,0 +1,103 @@
+{
+    "name": "@carimus/eslint-config-react",
+    "version": "0.0.0-development",
+    "description": "A base eslint config for Carimus React web projects",
+    "main": "index.js",
+    "scripts": {
+        "test": "yarn run -s test:bad && yarn run -s test:good",
+        "test:bad:raw": "eslint --no-eslintrc -c ./index.js 'testFiles/bad/**/*.js'",
+        "test:bad": "echo 'Expecting testFiles/bad/**/*.js to fail.' && (!(yarn run -s test:bad:raw > /dev/null 2>&1) && echo 'Failed as expected!') || (echo 'testFiles/bad/**/*.js should have failed checks' && false)",
+        "test:good:raw": "eslint --no-eslintrc -c ./index.js 'testFiles/good/**/*.js'",
+        "test:good": "echo 'Expecting testFiles/good/**/*.js to pass.' && (yarn run -s test:good:raw && echo 'Passed as expected!') || (echo 'testFiles/good/**/*.js should have passed checks' && false)",
+        "lint": "eslint '{*,.github/**/*,testFiles/good/**/*}.{js,jsx}'",
+        "pretty": "prettier --write '{*,.github/**/*,testFiles/good/**/*}.{js,jsx,json,md,yml,html}'",
+        "semantic-release": "semantic-release",
+        "release": "yarn run semantic-release",
+        "release-ci": "echo 'unsafe-perm = true' > ./.npmrc && yarn run semantic-release && rm -rf ./.npmrc",
+        "commit": "git-cz"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Carimus/eslint-config-react.git"
+    },
+    "keywords": [
+        "eslint",
+        "eslintconfig",
+        "react"
+    ],
+    "author": "Carimus <connect@carimus.com>",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/Carimus/eslint-config-react/issues"
+    },
+    "homepage": "https://github.com/Carimus/eslint-config-react#readme",
+    "files": [
+        "index.js",
+        "eslintrc.json",
+        "package.json",
+        "yarn.lock",
+        "README.md"
+    ],
+    "peerDependencies": {
+        "eslint": ">=6",
+        "eslint-plugin-babel": ">=5.0.0",
+        "eslint-plugin-import": ">=2.18.0",
+        "eslint-plugin-jest": ">=22.0.0",
+        "eslint-plugin-node": ">=9.1.0",
+        "eslint-plugin-promise": ">=4.2.1",
+        "eslint-plugin-react": ">=7.0.0",
+        "eslint-plugin-standard": ">=4.0.0"
+    },
+    "dependencies": {
+        "@carimus/eslint-config-web": "^1.0.0",
+        "eslint-config-prettier": "^6.4.0"
+    },
+    "devDependencies": {
+        "@carimus/prettier-config": "^1.0.0",
+        "@commitlint/cli": "^8.2.0",
+        "@commitlint/config-conventional": "^8.2.0",
+        "commitizen": "^4.0.3",
+        "cz-conventional-changelog": "^3.0.2",
+        "eslint": ">=6",
+        "eslint-plugin-babel": ">=5.0.0",
+        "eslint-plugin-import": ">=2.18.0",
+        "eslint-plugin-jest": ">=22.0.0",
+        "eslint-plugin-node": ">=9.1.0",
+        "eslint-plugin-promise": ">=4.2.1",
+        "eslint-plugin-react": ">=7.0.0",
+        "eslint-plugin-standard": ">=4.0.0",
+        "husky": "^3.0.9",
+        "lint-staged": "^9.4.2",
+        "prettier": "^1.18.2",
+        "prop-types": "^15.7.2",
+        "react": "^16.10.2",
+        "semantic-release": "^15.13.24"
+    },
+    "config": {
+        "commitizen": {
+            "path": "./node_modules/cz-conventional-changelog"
+        }
+    },
+    "commitlint": {
+        "extends": [
+            "@commitlint/config-conventional"
+        ]
+    },
+    "husky": {
+        "hooks": {
+            "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+            "pre-commit": "lint-staged"
+        }
+    },
+    "lint-staged": {
+        "{*,.github/**/*,testFiles/good/**/*}.{js,jsx}": [
+            "prettier --write",
+            "eslint",
+            "git add"
+        ],
+        "{*,.github/**/*,testFiles/good/**/*}.{json,md,yml,html}": [
+            "prettier --write",
+            "git add"
+        ]
+    }
+}
