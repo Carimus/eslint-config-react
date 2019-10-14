@@ -4,7 +4,7 @@
             "jsx": true
         }
     },
-    "plugins": ["react"],
+    "plugins": ["react", "react-hooks"],
     "extends": [
         "@carimus/eslint-config-web",
         "plugin:react/recommended",
@@ -24,6 +24,8 @@
         "react/prop-types": ["error", { "skipUndeclared": true }],
         "react/display-name": ["off"],
         "react/require-default-props": "error",
-        "react/no-unused-prop-types": "error"
+        "react/no-unused-prop-types": "error",
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "error"
     }
 }

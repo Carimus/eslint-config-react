@@ -4,7 +4,9 @@ The prettier config used by Carimus React web projects.
 
 -   Extends [`@carimus/eslint-config-web`](https://github.com/Carimus/eslint-config-web)
 -   Adds the [`eslint-plugin-react`](https://www.npmjs.com/package/eslint-plugin-react) plugin
--   Adds the React recommended rules and some minor tweaks built-up over time across projects to promote healthier code
+-   Adds the [`eslint-plugin-react-hooks`](https://www.npmjs.com/package/eslint-plugin-react-hooks) plugin
+-   Adds the React recommended rules, the [`react-hooks/rules-of-hooks`](https://reactjs.org/docs/hooks-rules.html)
+    rule, and some minor tweaks built-up over time across projects to promote healthier code
 
 ### Important Note
 
