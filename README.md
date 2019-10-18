@@ -14,3 +14,10 @@ Even though `eslint-prettier-config` is applied in `@carimus/eslint-config-web`,
 since it's designed to turn off rules that might conflict with prettier and as such must always be applied last. ESLint
 handles deduping for us so it's fine that we specify `prettier` and `prettier/standard` multiple times (once here and
 once in the `@carimus/eslint-config-web` config).
+
+## Related Projects
+
+-   [`@carimus/eslint-config-web`](https://github.com/Carimus/eslint-config-web) for non-React Web projects
+-   [`@carimus/eslint-config-react-native`](https://github.com/Carimus/eslint-config-react-native) for React Native
+    projects
+-   [`@carimus/prettier-config`](https://github.com/Carimus/prettier-config) to configure Prettier.
